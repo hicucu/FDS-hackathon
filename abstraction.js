@@ -7,7 +7,7 @@ function game(targetNum) {
   function STATION_PROTO() {}
 
   // 객체에 프로퍼티 수 return;
-  STATION_PROTO.prototype.length = function () {
+  STATION_PROTO.prototype.length = function() {
     return Object.keys(this).length;
   };
 
@@ -26,10 +26,10 @@ function game(targetNum) {
    * x : x좌표
    * y : y좌표
    * id : 역 약어
-   * status : 0 기본, 1 문제, 2 맞춤
+   * status : 0 맞춤, -1 기본, 1 문제
    * stationName : 환승역 명
    */
-  function TransferStation(x, y, id, stationName, status = 0) {
+  function TransferStation(x, y, id, stationName, status = -1) {
     this.x = x;
     this.y = y;
     this.id = id;
@@ -39,21 +39,21 @@ function game(targetNum) {
 
   // 전체 환승역 객체 생성
   function setStation() {
-    STATION_LIST[1] = new TransferStation(10, 20, 'ydp1', '영등포1');
-    STATION_LIST[2] = new TransferStation(11, 20, 'ydp2', '영등포2');
-    STATION_LIST[3] = new TransferStation(12, 20, 'ydp3', '영등포3');
-    STATION_LIST[4] = new TransferStation(13, 20, 'ydp4', '영등포4');
-    STATION_LIST[5] = new TransferStation(14, 20, 'ydp5', '영등포5');
-    STATION_LIST[6] = new TransferStation(15, 20, 'ydp6', '영등포6');
-    STATION_LIST[7] = new TransferStation(16, 20, 'ydp6', '영등포7');
-    STATION_LIST[8] = new TransferStation(17, 20, 'ydp7', '영등포8');
-    STATION_LIST[9] = new TransferStation(18, 20, 'ydp8', '영등포8');
-    STATION_LIST[10] = new TransferStation(19, 20, 'ydp9', '영등포9');
-    STATION_LIST[11] = new TransferStation(20, 20, 'ydp10', '영등포10');
-    STATION_LIST[12] = new TransferStation(21, 20, 'ydp11', '영등포11');
-    STATION_LIST[13] = new TransferStation(22, 20, 'ydp12', '영등포12');
-    STATION_LIST[14] = new TransferStation(23, 20, 'ydp13', '영등포13');
-    STATION_LIST[15] = new TransferStation(24, 20, 'ydp14', '영등포14');
+    STATION_LIST[1] = new TransferStation(10, 20, "ydp1", "영등포1");
+    STATION_LIST[2] = new TransferStation(11, 20, "ydp2", "영등포2");
+    STATION_LIST[3] = new TransferStation(12, 20, "ydp3", "영등포3");
+    STATION_LIST[4] = new TransferStation(13, 20, "ydp4", "영등포4");
+    STATION_LIST[5] = new TransferStation(14, 20, "ydp5", "영등포5");
+    STATION_LIST[6] = new TransferStation(15, 20, "ydp6", "영등포6");
+    STATION_LIST[7] = new TransferStation(16, 20, "ydp6", "영등포7");
+    STATION_LIST[8] = new TransferStation(17, 20, "ydp7", "영등포8");
+    STATION_LIST[9] = new TransferStation(18, 20, "ydp8", "영등포8");
+    STATION_LIST[10] = new TransferStation(19, 20, "ydp9", "영등포9");
+    STATION_LIST[11] = new TransferStation(20, 20, "ydp10", "영등포10");
+    STATION_LIST[12] = new TransferStation(21, 20, "ydp11", "영등포11");
+    STATION_LIST[13] = new TransferStation(22, 20, "ydp12", "영등포12");
+    STATION_LIST[14] = new TransferStation(23, 20, "ydp13", "영등포13");
+    STATION_LIST[15] = new TransferStation(24, 20, "ydp14", "영등포14");
     /* ... */
   }
 
@@ -96,6 +96,7 @@ function game(targetNum) {
    * return : 선택한 환승역의 번호가 TARGET_STATION에 있으면 true, 없으면 false
    */
   function verifyStation(contentNum) {
+    // TARGET_STAION[contentNum] && TARGET_STAION[contentNum].status
     return true;
   }
 
@@ -160,8 +161,8 @@ function game(targetNum) {
   }
 
   // game 실행
-  if (onGame()) console.log('game start');
-  else console.log('game error');
+  if (onGame()) console.log("game start");
+  else console.log("game error");
 }
 
 game(3);
