@@ -1,9 +1,12 @@
 /*
- * versionState
- * console.log 실행여부
- * 0 : release -> console.log 출력 안함
- * 1 : develop -> console.log 출력
+ * 집에가고싶'조'
+ * 김들이, 황유순
  */
+
+// versionState
+// console.log 실행여부
+// 0 : release -> console.log 출력 안함
+// 1 : develop -> console.log 출력
 const versionState = 1;
 
 (function game(targetNum) {
@@ -14,6 +17,7 @@ const versionState = 1;
   function STATION_PROTO() {}
 
   // 객체에 프로퍼티 수 return을 위한 prototype 매개변수;
+  // 화살표 생성자 사용시 this가 전역이 됨
   STATION_PROTO.prototype.length = function () {
     return Object.keys(this).length;
   };
@@ -119,14 +123,20 @@ const versionState = 1;
 
   /* function initialize()
    * 초기화 함수
+   * return : 생성된 환승역 = 총 환승역, 생성된 타켓 = 입력된 타켓 수 : true / 아니면 false
    */
   function initialize() {
     // 환승역 리스트 생성
     setStation();
+    printLog(STATION_LIST);
+
     // 타겟 환승역 리스트 생성
     setTarget();
-    printLog(STATION_LIST);
     printLog(TARGET_STATION);
+    return !!(
+      STATION_LIST.length === TOTAL_STATION_COUNT + 1
+      && TARGET_STATION.length() === TARGET_COUNT
+    );
   }
 
   /* function verifyStation(contentNum)
@@ -212,13 +222,11 @@ const versionState = 1;
    */
   function onGame() {
     // 초기화
-    initialize();
-
-    if (!isShowReady()) {
+    if (initialize() && isShowReady()) {
       // 게임 준비 실패
-      return false;
+      return true;
     }
-    return true;
+    return false;
   }
   // game 실행
   onGame() ? printLog('실행 성공') : printLog('실행 실패');
