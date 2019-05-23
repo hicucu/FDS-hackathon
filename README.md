@@ -1,8 +1,24 @@
-# FDS-hackathon
+# 지하철 환승역 찾기
 
 ## 집에가고싶'조'
 
 김들이, 황유순
+
+### 역활
+
+- 김들이 : PM / javascript 추상화 / 프로그래밍 로직 정리 / publishing
+- 황유순 : Main Develop / UX/UI / javascript 기능 구현
+
+## 목표
+
+- 간단한 게임 구현을 통해 HTML/CSS, JAVSScript 실습
+- 결과물의 완성도를 위한 전략적 역활 분담이 아닌 js의 추상화 및 html의 구조설계와 실제 구현의 역활을 교차하여 두 사람 모두 공평한 참여를 지향
+
+### MVP
+
+- [ ] HTML/CSS 이용 view page 개발
+- [ ] 전체 지하철 역, 선택해야 할 지하철역 생성 및 표시
+- [ ] 클릭한 지하철역과 선택해야 할 역 비교 및 비교 결과 출력
 
 ## 일정
 
@@ -26,8 +42,15 @@
 
 ### 190523
 
-- 추상화 및 디자인 레이아웃 (예정)
+- ~~추상화 및 디자인 레이아웃 (예정)~~<br>
+- 디자인 레이아웃 완료
 
 ### 190524
 
 - 개발 (예정)
+
+## Reference
+
+> https://codepen.io/ConnorGaunt/pen/wWZdxB
+
+## DEMO
