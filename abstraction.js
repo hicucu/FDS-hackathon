@@ -139,12 +139,12 @@ const versionState = 1;
     );
   }
 
-  /* function verifyStation(contentNum)
+  /* function verifyStation(target)
    * 선택한 환승역 확인
-   * contentNum : 선택한 환승역의 번호
+   * target : 선택한 환승역
    * return : 선택한 환승역의 번호가 TARGET_STATION에 있으면 true, 없으면 false
    */
-  function verifyStation(contentNum) {
+  function verifyStation(target) {
     return true;
   }
 
@@ -181,15 +181,16 @@ const versionState = 1;
   /* function stationClick(contentNum)
    * 환승역 선택시
    * button click event 연결 -> closer
-   * contentNum : click한 button의 content값 = 해당 STATION_LIST의 index
+   * e : click event
    */
-  function stationClick(contentNum) {
-    printLog(contentNum);
+  function stationClick(e) {
+    const { target } = e;
+    printLog(target);
 
     if (toggleStatus) {
       toggleStatus = false;
 
-      if (verifyStation(contentNum)) {
+      if (verifyStation(target)) {
         success();
       } else {
         fail();
