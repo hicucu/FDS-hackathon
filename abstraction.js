@@ -75,22 +75,45 @@ const versionState = 1;
 
   // 전체 환승역 객체 생성
   function setStation() {
-    STATION_LIST[1] = new TransferStation(10, 20, 'ydp1', '영등포1');
-    STATION_LIST[2] = new TransferStation(11, 20, 'ydp2', '영등포2');
-    STATION_LIST[3] = new TransferStation(12, 20, 'ydp3', '영등포3');
-    STATION_LIST[4] = new TransferStation(13, 20, 'ydp4', '영등포4');
-    STATION_LIST[5] = new TransferStation(14, 20, 'ydp5', '영등포5');
-    STATION_LIST[6] = new TransferStation(15, 20, 'ydp6', '영등포6');
-    STATION_LIST[7] = new TransferStation(16, 20, 'ydp6', '영등포7');
-    STATION_LIST[8] = new TransferStation(17, 20, 'ydp7', '영등포8');
-    STATION_LIST[9] = new TransferStation(18, 20, 'ydp8', '영등포8');
-    STATION_LIST[10] = new TransferStation(19, 20, 'ydp9', '영등포9');
-    STATION_LIST[11] = new TransferStation(20, 20, 'ydp10', '영등포10');
-    STATION_LIST[12] = new TransferStation(21, 20, 'ydp11', '영등포11');
-    STATION_LIST[13] = new TransferStation(22, 20, 'ydp12', '영등포12');
-    STATION_LIST[14] = new TransferStation(23, 20, 'ydp13', '영등포13');
-    STATION_LIST[15] = new TransferStation(24, 20, 'ydp14', '영등포14');
-    /* ... */
+    STATION_LIST[1] = new TransferStation(434, 445, 'gn', '강남');
+    STATION_LIST[2] = new TransferStation(510, 248, 'gnco', '강남구청');
+    STATION_LIST[3] = new TransferStation(575, 165, 'ku', '건대입구');
+    STATION_LIST[4] = new TransferStation(391, 351, 'gt', '고속터미널');
+    STATION_LIST[5] = new TransferStation(164, 175, 'gd', '공덕');
+    STATION_LIST[6] = new TransferStation(391, 445, 'sune', '교대');
+    STATION_LIST[7] = new TransferStation(208, 319, 'ny', '노량진');
+    STATION_LIST[8] = new TransferStation(36, 232, 'ds', '당산');
+    STATION_LIST[9] = new TransferStation(42, 338, 'dl', '대림');
+    STATION_LIST[10] = new TransferStation(334, 47, 'dp', '동대문역사문화공원');
+    STATION_LIST[11] = new TransferStation(306, 327, 'dj', '동작');
+    STATION_LIST[12] = new TransferStation(306, 445, 'sd', '사당');
+    STATION_LIST[13] = new TransferStation(274, 175, 'skg', '삼각지');
+    STATION_LIST[14] = new TransferStation(221, 132, 'seoul', '서울역');
+    STATION_LIST[15] = new TransferStation(510, 443, 'sl', '선릉');
+    STATION_LIST[16] = new TransferStation(510, 388, 'sjl', '선정릉');
+    STATION_LIST[17] = new TransferStation(575, 130, 'ss', '성수');
+    STATION_LIST[18] = new TransferStation(220, 47, 'co', '시청');
+    STATION_LIST[19] = new TransferStation(127, 330, 'sg', '신길');
+    STATION_LIST[20] = new TransferStation(397, 47, 'sind', '신당');
+    STATION_LIST[21] = new TransferStation(36, 330, 'sdl', '신도림');
+    STATION_LIST[22] = new TransferStation(397, 128, 'ys', '약수');
+    STATION_LIST[23] = new TransferStation(164, 281, 'yud', '여의도');
+    STATION_LIST[24] = new TransferStation(36, 273, 'ydpco', '영등포구청');
+    STATION_LIST[25] = new TransferStation(391, 219, 'oks', '옥수');
+    STATION_LIST[26] = new TransferStation(510, 53, 'wsl', '왕십리');
+    STATION_LIST[27] = new TransferStation(221, 241, 'yong', '용산');
+    STATION_LIST[28] = new TransferStation(227, 47, 'e3', '을지로3가');
+    STATION_LIST[29] = new TransferStation(309, 47, 'e4', '을지로4가');
+    STATION_LIST[30] = new TransferStation(306, 259, 'echn', '이촌');
+    STATION_LIST[31] = new TransferStation(575, 433, 'js', '잠실');
+    STATION_LIST[32] = new TransferStation(564, 403, 'sport', '종합운동장');
+    STATION_LIST[33] = new TransferStation(397, 82, 'cg', '청구');
+    STATION_LIST[34] = new TransferStation(306, 384, 'cs', '총신대입구(이수)');
+    STATION_LIST[35] = new TransferStation(305, 89, 'cm', '충무로');
+    STATION_LIST[36] = new TransferStation(164, 47, 'cj', '충정로');
+    STATION_LIST[37] = new TransferStation(36, 175, 'hj', '합정');
+    STATION_LIST[38] = new TransferStation(36, 117, 'hu', '홍대입구');
+    STATION_LIST[39] = new TransferStation(180, 175, 'hyo', '효창공원앞');
   }
 
   /* function randomItem()
