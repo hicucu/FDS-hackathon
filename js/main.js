@@ -8,15 +8,11 @@
 // 0 : release -> console.log 출력 안함
 // 1 : develop -> console.log 출력
 const versionState = 1;
-const $map = document.querySelector('.map-div');
-const $targetList = document.querySelector('.target-list');
-const $startBtn = document.querySelector('.btn-start');
-
-$startBtn.addEventListener('click', function(){
-  game(5);
-})
 
 function game(targetNum) {
+  const $map = document.querySelector('.map-div');
+  const $targetList = document.querySelector('.target-list');
+  const $gameController = document.querySelector('.game-controller');
   // 찾을 환승역의 총 수
   const TARGET_COUNT = targetNum;
 
@@ -126,27 +122,28 @@ function game(targetNum) {
   function renderBtn() {
     const targetBtnDiv = document.createElement('div');
     targetBtnDiv.classList.add('target-btn-div');
-    STATION_LIST.forEach(function(item, index) {
-      if(index > 0) {
-      const targetBtn = document.createElement('button');
-      targetBtn.classList.add('map-btn');
-      targetBtn.style.position = 'absolute';
-      targetBtn.style.top = `${item.y - 10}px`;
-      targetBtn.style.left = `${item.x - 10}px`;
-      targetBtn.innerText = `${index}`
-      targetBtnDiv.append(targetBtn);
-    }
-  })
-    $map.append(targetBtnDiv);
-}
-  
-  
-  function renderList() {
-    STATION_LIST.forEach(function (item) {
-      if(item.status === 1){
-      $targetList.innerHTML += `<li class="target-list-item">${item.stationName}</li>`
+    STATION_LIST.forEach((item, index) => {
+      if (index > 0) {
+        const targetBtn = document.createElement('button');
+        targetBtn.classList.add('map-btn');
+        targetBtn.style.position = 'absolute';
+        targetBtn.style.top = `${item.y - 10}px`;
+        targetBtn.style.left = `${item.x - 10}px`;
+        targetBtn.innerText = `${index}`;
+        targetBtnDiv.append(targetBtn);
       }
-    })
+    });
+    $map.append(targetBtnDiv);
+  }
+
+  function renderList() {
+    STATION_LIST.forEach((item) => {
+      if (item.status === 1) {
+        $targetList.innerHTML += `<li class="target-list-item">${
+          item.stationName
+        }</li>`;
+      }
+    });
   }
 
   /* function randomItem()
@@ -201,15 +198,15 @@ function game(targetNum) {
    * return : 선택한 환승역의 번호가 TARGET_STATION에 있으면 true, 없으면 false
    */
   function verifyStation(target) {
-    if(STATION_LIST[target].status !== 1){
+    if (STATION_LIST[target].status !== 1) {
       console.log('not a target');
       return false;
-    };
-    let targetName = TARGET_STATION[STATION_LIST[target].id].stationName;
+    }
+    const targetName = TARGET_STATION[STATION_LIST[target].id].stationName;
     STATION_LIST[target].status = 2;
-    let targetItems = $targetList.childNodes;
-    targetItems.forEach(function(item){
-      if(targetName === item.innerText){
+    const targetItems = $targetList.childNodes;
+    targetItems.forEach((item) => {
+      if (targetName === item.innerText) {
         item.style.textDecoration = 'line-through';
       }
     });
@@ -272,9 +269,9 @@ function game(targetNum) {
   }
 
   // 클릭된 버튼 선택, 버튼의 숫자 추출
-  $map.addEventListener('click', function (e) {
-    let target = e.target;
-    if(target.classList.contains('map-btn')) {
+  $map.addEventListener('click', (e) => {
+    const { target } = e;
+    if (target.classList.contains('map-btn')) {
       chosenNum = target.firstChild.nodeValue;
       stationClick(chosenNum);
     }
@@ -288,7 +285,7 @@ function game(targetNum) {
   function setViewer() {
     renderBtn();
     renderList();
-    $startBtn.style.display = 'none';
+    $gameController.style.display = 'none';
   }
 
   /* 초기화화면 -> 게임화면 화면전환
@@ -316,3 +313,7 @@ function game(targetNum) {
   onGame() ? printLog('실행 성공') : printLog('실행 실패');
 }
 
+document.querySelector('.btn-start').addEventListener('click', () => {
+  const gameOption = document.querySelector('.game-option:checked');
+  game(Number(gameOption.value));
+});
