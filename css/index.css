@@ -1,0 +1,244 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+@import url("fontello.css");
+@import url("normalize.css");
+@font-face {
+  font-family: "HangeulNuri-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@keyframes startAni{
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+/* 스타일 초기화 */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.wrapper {
+  background-color: black;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  animation: startAni 1s;
+}
+.wrapper::before {
+  content: "";
+  display: block;
+  height: calc(50vh - 280px);
+}
+.radius {
+  border-radius: 10px;
+}
+.game-area {
+  background-image: url("../img/underground.jpg");
+  background-repeat: no-repeat;
+  width: 1280px;
+  height: 560px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+.game-area::before {
+  content: "";
+  display: block;
+  height: calc(280px - 243px);
+}
+.game-content {
+  display: block;
+  margin: 0 auto;
+  width: 1000px;
+  height: 487px;
+}
+.game-content::after {
+  content: "";
+  clear: both;
+}
+.map-div {
+  background-image: url("../img/no-transfer.png");
+  float: left;
+  background-size: cover;
+
+  display: block;
+  width: 650px;
+  height: 487px;
+  position: relative;
+}
+.map-btn {
+  background-image: url("../img/btn.png");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin: 1px;
+  padding-top: 20px;
+  overflow: hidden;
+  border: none;
+  background-color: rgba(0, 0, 0, 0%);
+}
+.list-div {
+  background-color: rgba(0, 0, 0, 35%);
+  float: left;
+  width: 320px;
+  margin-left: 15px;
+  height: 487px;
+}
+h1 {
+  font-size: 30px;
+  text-align: center;
+  margin: 50px;
+  font-family: "HangeulNuri-Bold";
+  color: rgb(240, 247, 144);
+  text-shadow: 0 0 13px black;
+}
+.target-list-item {
+  font-size: 24px;
+  display: block;
+  width: 320px;
+  text-align: center;
+  margin-top: 30px;
+  font-family: "HangeulNuri-Bold";
+  color: white;
+  text-shadow: 0 0 3px black;
+}
+.game-controller{
+  text-align: center;
+}
+.btn-start{
+  border-radius: 10px;
+  border-style: none;
+  padding: 10px;
+  margin-left: 10px;
+  background-color: rgb(0, 161, 0);
+  color: white;
+  cursor: pointer;
+}
+.game-setting{
+  padding: 5px;
+  width: 50px;
+}
+.game-setting, .btn-start, .target-list-item, h1, .team-info small{
+  font-family: 'HangeulNuri-Bold';
+}
+
+.team-info {
+  background-color: black;
+  height: 50px;
+}
+.team-info small{
+  text-align: center;
+  display:block;
+  padding-top: 15px;
+  color: rgb(154, 142, 167);
+}
