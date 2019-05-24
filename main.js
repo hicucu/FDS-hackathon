@@ -8,6 +8,7 @@
 // 0 : release -> console.log 출력 안함
 // 1 : develop -> console.log 출력
 const versionState = 1;
+const $map = document.querySelector('.map-div');
 
 (function game(targetNum) {
   // 찾을 환승역의 총 수
@@ -35,7 +36,7 @@ const versionState = 1;
   ];
   // 찾을 환승역 리스트
   const TARGET_STATION = new STATION_PROTO();
-  const TOTAL_STATION_COUNT = 15;
+  const TOTAL_STATION_COUNT = 39;
 
   // 선택 성공 갯수
   let successCount = 0;
@@ -114,6 +115,15 @@ const versionState = 1;
     STATION_LIST[37] = new TransferStation(36, 175, 'hj', '합정');
     STATION_LIST[38] = new TransferStation(36, 117, 'hu', '홍대입구');
     STATION_LIST[39] = new TransferStation(180, 175, 'hyo', '효창공원앞');
+  }
+
+  function renderBtn() {
+    STATION_LIST.forEach(function(item, index) {
+      if(index > 0){
+      $map.innerHTML += `<button class="map-btn" style="top: ${item.y}px; left: ${item.x}px;">${index}</button>`;
+      console.log($map);
+      }
+    });
   }
 
   /* function randomItem()
@@ -229,7 +239,9 @@ const versionState = 1;
    * 화면에 환승역 버튼 생성
    * 이벤트 연결
    */
-  function setViewer() {}
+  function setViewer() {
+    renderBtn();
+  }
 
   /* 초기화화면 -> 게임화면 화면전환
    * return :  화면 전환 완료시 true
