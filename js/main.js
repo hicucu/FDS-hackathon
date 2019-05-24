@@ -233,7 +233,8 @@ function game(targetNum) {
    * 게임 종료시
    */
   function showEnding() {
-    alert('다 맞췄다!');
+    // alert('다 맞췄다!');
+    ending();
     // 버튼 리스너 막기
     // 엔딩 화면
   }

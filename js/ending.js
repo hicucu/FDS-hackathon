@@ -1,7 +1,7 @@
 // eslint-disable-next-line func-names
 function ending() {
   const endingHtml = `
-  <h1>HAPPY 4TH OF JULY</h1>
+  <h1 class="ending-message">집에 왔조~</h1>
   <div class="fireworks">
     <div class="firework">
       <div class="explosion"><div class="spark green"></div></div>
@@ -78,6 +78,6 @@ function ending() {
   const endingFrame = document.createElement('div');
   endingFrame.classList.add('ending-frame');
   endingFrame.innerHTML = endingHtml;
-  const container = document.querySelector('.container');
-  container.append(endingFrame);
+  const container = document.querySelector('.game-area');
+  container.prepend(endingFrame);
 }
