@@ -118,11 +118,13 @@ a {
   width: 100vw;
   height: calc(100vh - 50px);
 }
-
 .wrapper::before {
   content: "";
   display: block;
   height: calc(50vh - 280px);
+}
+.radius {
+  border-radius: 10px;
 }
 .game-area {
   background-image: url("../img/underground.jpg");
@@ -146,6 +148,8 @@ a {
 .map-div {
   background-image: url("../img/no-transfer.png");
   float: left;
+  background-size: cover;
+
   display: inline-block;
   width: 650px;
   height: 487px;
