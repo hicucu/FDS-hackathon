@@ -9,6 +9,7 @@
 // 1 : develop -> console.log 출력
 const versionState = 1;
 const $map = document.querySelector('.map-div');
+const $targetList = document.querySelector('.target-list');
 
 (function game(targetNum) {
   // 찾을 환승역의 총 수
@@ -121,9 +122,16 @@ const $map = document.querySelector('.map-div');
     STATION_LIST.forEach(function(item, index) {
       if(index > 0){
       $map.innerHTML += `<button class="map-btn" style="top: ${item.y}px; left: ${item.x}px;">${index}</button>`;
-      console.log($map);
       }
     });
+  }
+
+  function renderList() {
+    STATION_LIST.forEach(function (item) {
+      if(item.status === 1){
+      $targetList.innerHTML += `<li>${item.stationName}</li>`
+      }
+    })
   }
 
   /* function randomItem()
@@ -178,6 +186,7 @@ const $map = document.querySelector('.map-div');
    * return : 선택한 환승역의 번호가 TARGET_STATION에 있으면 true, 없으면 false
    */
   function verifyStation(target) {
+    console.log(target);
     return true;
   }
 
@@ -234,6 +243,14 @@ const $map = document.querySelector('.map-div');
     }
   }
 
+  // 클릭된 버튼 선택
+  $map.addEventListener('click', function (e) {
+    let target = e.target;
+    if(target.classList.contains('map-btn')) {
+      console.log(target);
+    }
+  });
+
   /* function setViewer()
    * 초기화화면 -> 게임화면 화면전환
    * 화면에 환승역 버튼 생성
@@ -241,6 +258,7 @@ const $map = document.querySelector('.map-div');
    */
   function setViewer() {
     renderBtn();
+    renderList();
   }
 
   /* 초기화화면 -> 게임화면 화면전환
@@ -266,4 +284,4 @@ const $map = document.querySelector('.map-div');
   }
   // game 실행
   onGame() ? printLog('실행 성공') : printLog('실행 실패');
-}(3));
+}(5));
