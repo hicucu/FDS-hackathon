@@ -1,0 +1,23 @@
+.wrapper {
+  background-color: black;
+  width: 100vw;
+}
+
+.game-area {
+  background-image: url("./img/underground.jpg");
+  background-repeat: no-repeat;
+  width: 1280px;
+  height: 560px;
+  display: block;
+  margin: 0 auto;
+}
+.map-div {
+  float: left;
+}
+.list-div {
+  background-color: lime;
+  float: left;
+}
+.team-info {
+  background-color: yellow;
+}
