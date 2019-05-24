@@ -145,12 +145,16 @@ a {
   width: 1000px;
   height: 487px;
 }
+.game-content::after {
+  content: "";
+  clear: both;
+}
 .map-div {
   background-image: url("../img/no-transfer.png");
   float: left;
   background-size: cover;
 
-  display: inline-block;
+  display: block;
   width: 650px;
   height: 487px;
   position: relative;
