@@ -119,11 +119,14 @@ const $targetList = document.querySelector('.target-list');
   }
 
   function renderBtn() {
+    const targetBtnDiv = document.createElement('div');
+    targetBtnDiv.classList.add('target-btn-div');
     STATION_LIST.forEach(function(item, index) {
       if(index > 0){
-      $map.innerHTML += `<button class="map-btn" style="top: ${item.y}px; left: ${item.x}px;">${index}</button>`;
+      targetBtnDiv.innerHTML += `<button class="map-btn" style="top: ${item.y}px; left: ${item.x}px;">${index}</button>`;
       }
     });
+    $map.append(targetBtnDiv);
   }
 
   function renderList() {
