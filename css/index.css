@@ -189,12 +189,9 @@ h1 {
   font-size: 30px;
   text-align: center;
   margin: 50px;
-<<<<<<< HEAD
-  color: rgb(240, 255, 106);
-  text-shadow: 0px 0px 13px black;
-=======
   font-family: "HangeulNuri-Bold";
->>>>>>> feature
+  color: rgb(240, 247, 144);
+  text-shadow: 0 0 13px black;
 }
 .target-list-item {
   font-size: 24px;
@@ -202,12 +199,9 @@ h1 {
   width: 320px;
   text-align: center;
   margin-top: 30px;
-<<<<<<< HEAD
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 3px black;
-=======
   font-family: "HangeulNuri-Bold";
->>>>>>> feature
+  color: white;
+  text-shadow: 0 0 3px black;
 }
 .game-controller{
   text-align: center;
