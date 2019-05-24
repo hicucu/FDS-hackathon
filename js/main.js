@@ -81,11 +81,11 @@ const $targetList = document.querySelector('.target-list');
     STATION_LIST[2] = new TransferStation(510, 248, 'gnco', '강남구청');
     STATION_LIST[3] = new TransferStation(575, 165, 'ku', '건대입구');
     STATION_LIST[4] = new TransferStation(391, 351, 'gt', '고속터미널');
-    STATION_LIST[5] = new TransferStation(164, 175, 'gd', '공덕');
+    STATION_LIST[5] = new TransferStation(155, 175, 'gd', '공덕');
     STATION_LIST[6] = new TransferStation(391, 445, 'sune', '교대');
     STATION_LIST[7] = new TransferStation(208, 319, 'ny', '노량진');
     STATION_LIST[8] = new TransferStation(36, 232, 'ds', '당산');
-    STATION_LIST[9] = new TransferStation(42, 338, 'dl', '대림');
+    STATION_LIST[9] = new TransferStation(42, 390, 'dl', '대림');
     STATION_LIST[10] = new TransferStation(334, 47, 'dp', '동대문역사문화공원');
     STATION_LIST[11] = new TransferStation(306, 327, 'dj', '동작');
     STATION_LIST[12] = new TransferStation(306, 445, 'sd', '사당');
@@ -104,10 +104,10 @@ const $targetList = document.querySelector('.target-list');
     STATION_LIST[25] = new TransferStation(391, 219, 'oks', '옥수');
     STATION_LIST[26] = new TransferStation(510, 53, 'wsl', '왕십리');
     STATION_LIST[27] = new TransferStation(221, 241, 'yong', '용산');
-    STATION_LIST[28] = new TransferStation(227, 47, 'e3', '을지로3가');
+    STATION_LIST[28] = new TransferStation(277, 47, 'e3', '을지로3가');
     STATION_LIST[29] = new TransferStation(309, 47, 'e4', '을지로4가');
     STATION_LIST[30] = new TransferStation(306, 259, 'echn', '이촌');
-    STATION_LIST[31] = new TransferStation(575, 433, 'js', '잠실');
+    STATION_LIST[31] = new TransferStation(575, 344, 'js', '잠실');
     STATION_LIST[32] = new TransferStation(564, 403, 'sport', '종합운동장');
     STATION_LIST[33] = new TransferStation(397, 82, 'cg', '청구');
     STATION_LIST[34] = new TransferStation(306, 384, 'cs', '총신대입구(이수)');
@@ -115,7 +115,7 @@ const $targetList = document.querySelector('.target-list');
     STATION_LIST[36] = new TransferStation(164, 47, 'cj', '충정로');
     STATION_LIST[37] = new TransferStation(36, 175, 'hj', '합정');
     STATION_LIST[38] = new TransferStation(36, 117, 'hu', '홍대입구');
-    STATION_LIST[39] = new TransferStation(180, 175, 'hyo', '효창공원앞');
+    STATION_LIST[39] = new TransferStation(182, 175, 'hyo', '효창공원앞');
   }
 
   function renderBtn() {
@@ -126,8 +126,8 @@ const $targetList = document.querySelector('.target-list');
       const targetBtn = document.createElement('button');
       targetBtn.classList.add('map-btn');
       targetBtn.style.position = 'absolute';
-      targetBtn.style.top = `${item.y}px`;
-      targetBtn.style.left = `${item.x}px`;
+      targetBtn.style.top = `${item.y - 10}px`;
+      targetBtn.style.left = `${item.x - 10}px`;
       targetBtn.innerText = `${index}`
       targetBtnDiv.append(targetBtn);
     }
