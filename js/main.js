@@ -7,7 +7,7 @@
 // console.log 실행여부
 // 0 : release -> console.log 출력 안함
 // 1 : develop -> console.log 출력
-const versionState = 1;
+const versionState = 0;
 
 function game(targetNum) {
   const $map = document.querySelector('.map-div');

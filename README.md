@@ -18,9 +18,9 @@
 
 ### MVP
 
-- [ ] HTML/CSS 이용 view page 개발
-- [ ] 전체 지하철 역, 선택해야 할 지하철역 생성 및 표시
-- [ ] 클릭한 지하철역과 선택해야 할 역 비교 및 비교 결과 출력
+- [v] HTML/CSS 이용 view page 개발
+- [v] 전체 지하철 역, 선택해야 할 지하철역 생성 및 표시
+- [v] 클릭한 지하철역과 선택해야 할 역 비교 및 비교 결과 출력
 
 ## 코딩컨벤션
 
@@ -58,13 +58,15 @@
 - ~~추상화 및 디자인 레이아웃 (예정)~~<br>
 - 디자인 레이아웃 완료
 
-
 ### 190524
 
-- 개발 (예정)
+- ~~개발 (예정)~~<br>
+- 개발 완료
 
 ## Reference
 
 > https://codepen.io/ConnorGaunt/pen/wWZdxB
 
 ## DEMO
+
+> https://hicucu.github.io/FDS-hackathon/
