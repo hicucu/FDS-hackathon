@@ -10,8 +10,13 @@
 const versionState = 1;
 const $map = document.querySelector('.map-div');
 const $targetList = document.querySelector('.target-list');
+const $startBtn = document.querySelector('.btn-start');
 
-(function game(targetNum) {
+$startBtn.addEventListener('click', function(){
+  game(5);
+})
+
+function game(targetNum) {
   // 찾을 환승역의 총 수
   const TARGET_COUNT = targetNum;
 
@@ -283,6 +288,7 @@ const $targetList = document.querySelector('.target-list');
   function setViewer() {
     renderBtn();
     renderList();
+    $startBtn.style.display = 'none';
   }
 
   /* 초기화화면 -> 게임화면 화면전환
@@ -308,4 +314,5 @@ const $targetList = document.querySelector('.target-list');
   }
   // game 실행
   onGame() ? printLog('실행 성공') : printLog('실행 실패');
-}(5));
+}
+
