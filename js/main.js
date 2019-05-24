@@ -122,13 +122,20 @@ const $targetList = document.querySelector('.target-list');
     const targetBtnDiv = document.createElement('div');
     targetBtnDiv.classList.add('target-btn-div');
     STATION_LIST.forEach(function(item, index) {
-      if(index > 0){
-      targetBtnDiv.innerHTML += `<button class="map-btn" style="top: ${item.y}px; left: ${item.x}px;">${index}</button>`;
-      }
-    });
+      if(index > 0) {
+      const targetBtn = document.createElement('button');
+      targetBtn.classList.add('map-btn');
+      targetBtn.style.position = 'absolute';
+      targetBtn.style.top = `${item.y}px`;
+      targetBtn.style.left = `${item.x}px`;
+      targetBtn.innerText = `${index}`
+      targetBtnDiv.append(targetBtn);
+    }
+  })
     $map.append(targetBtnDiv);
-  }
-
+}
+  
+  
   function renderList() {
     STATION_LIST.forEach(function (item) {
       if(item.status === 1){
