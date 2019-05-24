@@ -189,7 +189,13 @@ const $targetList = document.querySelector('.target-list');
    * return : 선택한 환승역의 번호가 TARGET_STATION에 있으면 true, 없으면 false
    */
   function verifyStation(target) {
-    console.log(target);
+    if(STATION_LIST[target].status !== 1){
+      console.log('not a target');
+      return false;
+    };
+    let targetName = TARGET_STATION[STATION_LIST[target].id].stationName;
+    STATION_LIST[target].status = 2;
+    console.log(targetName);
     return true;
   }
 
@@ -226,16 +232,16 @@ const $targetList = document.querySelector('.target-list');
   /* function stationClick(contentNum)
    * 환승역 선택시
    * button click event 연결 -> closer
-   * e : click event
+   * chosenNum = 선택한 버튼의 숫자
    */
-  function stationClick(e) {
-    const { target } = e;
-    printLog(target);
+  function stationClick(chosenNum) {
+    // const { target } = e;
+    // printLog(target);
 
     if (toggleStatus) {
       toggleStatus = false;
 
-      if (verifyStation(target)) {
+      if (verifyStation(chosenNum)) {
         success();
       } else {
         fail();
@@ -246,11 +252,12 @@ const $targetList = document.querySelector('.target-list');
     }
   }
 
-  // 클릭된 버튼 선택
+  // 클릭된 버튼 선택, 버튼의 숫자 추출
   $map.addEventListener('click', function (e) {
     let target = e.target;
     if(target.classList.contains('map-btn')) {
-      console.log(target);
+      chosenNum = target.firstChild.nodeValue;
+      stationClick(chosenNum);
     }
   });
 
