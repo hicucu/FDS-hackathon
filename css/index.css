@@ -177,6 +177,12 @@ a {
   margin-left: 15px;
   height: 487px;
 }
+.target-list-item {
+  font-size: 20px;
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+}
 .team-info {
   background-color: yellow;
   height: 50px;
