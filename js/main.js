@@ -139,7 +139,7 @@ const $targetList = document.querySelector('.target-list');
   function renderList() {
     STATION_LIST.forEach(function (item) {
       if(item.status === 1){
-      $targetList.innerHTML += `<li>${item.stationName}</li>`
+      $targetList.innerHTML += `<li class="target-list-item">${item.stationName}</li>`
       }
     })
   }
