@@ -2,6 +2,7 @@
 @import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 @import url("fontello.css");
 @import url("normalize.css");
+@font-face { font-family: 'HangeulNuri-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
 /* 스타일 초기화 */
 html,
 body,
@@ -177,11 +178,19 @@ a {
   margin-left: 15px;
   height: 487px;
 }
+h1{
+  font-size: 30px;
+  text-align: center;
+  margin: 50px;
+  font-family: 'HangeulNuri-Bold'
+}
 .target-list-item {
-  font-size: 20px;
+  font-size: 24px;
   display: block;
-  width: 100px;
-  margin: 0 auto;
+  width: 320px;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'HangeulNuri-Bold'
 }
 .team-info {
   background-color: yellow;
