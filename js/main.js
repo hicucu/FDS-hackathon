@@ -81,7 +81,7 @@ const $targetList = document.querySelector('.target-list');
     STATION_LIST[2] = new TransferStation(510, 248, 'gnco', '강남구청');
     STATION_LIST[3] = new TransferStation(575, 165, 'ku', '건대입구');
     STATION_LIST[4] = new TransferStation(391, 351, 'gt', '고속터미널');
-    STATION_LIST[5] = new TransferStation(155, 175, 'gd', '공덕');
+    STATION_LIST[5] = new TransferStation(160, 175, 'gd', '공덕');
     STATION_LIST[6] = new TransferStation(391, 445, 'sune', '교대');
     STATION_LIST[7] = new TransferStation(208, 319, 'ny', '노량진');
     STATION_LIST[8] = new TransferStation(36, 232, 'ds', '당산');
@@ -202,6 +202,12 @@ const $targetList = document.querySelector('.target-list');
     };
     let targetName = TARGET_STATION[STATION_LIST[target].id].stationName;
     STATION_LIST[target].status = 2;
+    let targetItems = $targetList.childNodes;
+    targetItems.forEach(function(item){
+      if(targetName === item.innerText){
+        item.style.textDecoration = 'line-through';
+      }
+    });
     console.log(targetName);
     return true;
   }
@@ -225,6 +231,7 @@ const $targetList = document.querySelector('.target-list');
    * 게임 종료시
    */
   function showEnding() {
+    alert('다 맞췄다!');
     // 버튼 리스너 막기
     // 엔딩 화면
   }
