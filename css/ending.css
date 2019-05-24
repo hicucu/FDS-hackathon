@@ -1,3 +1,12 @@
+@keyframes endingAni{
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+
 .ending-frame {
   background-image: url("../img/room.png");
   background-repeat: no-repeat;
@@ -11,13 +20,15 @@
   left: 0;
   display: inline-block;
   overflow: hidden;
+  animation: endingAni 1s;
 }
 .ending-message {
-  font-size: 130px;
-  text-align: center;
-  margin: 50px;
+  font-size: 100px;
+  margin-top: 100px;
+  width: 100%;
   font-family: "HangeulNuri-Bold";
   position: absolute;
+  color: rgba(255,255,255,80%);
 }
 .ending-title {
   text-align: center;
